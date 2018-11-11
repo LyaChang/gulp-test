@@ -42,6 +42,9 @@ gulp.task('jade', function() {
     return gulp.src('./source/scss/**/*.scss')
       .pipe($.plumber())
       .pipe($.sourcemaps.init())
+      // .pipe($.sass({
+      //   includePaths:['./node_modules/bootstrap/scss']
+      // }).on('error', $.sass.logError))
       .pipe($.sass().on('error', $.sass.logError))
       //編譯css
       .pipe($.postcss(plugins))
